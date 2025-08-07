@@ -1,0 +1,22 @@
+/* Custom CSS */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#portfolio .card {
+  transition: transform 0.3s;
+}
+
+#portfolio .card:hover {
+  transform: scale(1.05);
+}
+
+.project-title {
+  cursor: pointer;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: auto;
+}
