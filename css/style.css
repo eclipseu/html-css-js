@@ -1,22 +1,191 @@
-/* Custom CSS */
-
-body {
-  font-family: Arial, sans-serif;
+/* Root Color Scheme */
+:root {
+  --bg-light: #f4f4f4;
+  --bg-dark: #121212;
+  --text-light: #ffffff;
+  --text-dark: #222;
+  --primary: #4c6ef5;
 }
 
+/* General Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+/* Header Behavior */
+.header-main {
+  background-color: var(--bg-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+/* Neumorphic Cards */
 #portfolio .card {
-  transition: transform 0.3s;
+  background: #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s;
+  overflow: hidden;
+  color: #222;
 }
 
 #portfolio .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.project-title {
-  cursor: pointer;
+/* Dark Mode Cards */
+.dark-mode #portfolio .card {
+  background: #1e1e1e;
+  box-shadow: 8px 8px 16px #0f0f0f, -8px -8px 16px #2a2a2a;
+  color: var(--text-light);
 }
 
+/* Hero Section */
+.hero-section {
+  background: #e0e0e0;
+  color: #111;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+}
+
+/* Dark Mode Hero Section */
+.dark-mode .hero-section {
+  background: #1e1e1e;
+  color: var(--text-light);
+  box-shadow: inset 6px 6px 12px #0f0f0f, inset -6px -6px 12px #2a2a2a;
+}
+
+/* Contact Form Neumorphism */
 #contact form {
-  max-width: 600px;
-  margin: auto;
+  background: #e0e0e0;
+  box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Dark Mode Contact */
+.dark-mode #contact form {
+  background: #1e1e1e;
+  box-shadow: inset 6px 6px 12px #0f0f0f, inset -6px -6px 12px #2a2a2a;
+  color: var(--text-light);
+}
+/* Light mode modal content */
+.modal-content {
+  background: #e0e0e0;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header stays dark to contrast */
+.modal-header {
+  background-color: #2c2c2c;
+  color: #fff;
+  border-bottom: none;
+}
+
+/* Optional: info box inside modal */
+.modal-info-box {
+  background: #f0f0f0;
+  box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+  color: #111;
+}
+
+/* Dark mode support */
+.dark-mode .modal-content {
+  background: #1f1f1f;
+  color: #f5f5f5;
+  box-shadow: 8px 8px 16px #0f0f0f, -8px -8px 16px #2a2a2a;
+}
+
+.dark-mode .modal-header {
+  background-color: #111;
+  color: #fff;
+}
+
+.dark-mode .modal-info-box {
+  background: #2a2a2a;
+  box-shadow: inset 6px 6px 12px #1a1a1a, inset -6px -6px 12px #333;
+  color: #eee;
+}
+
+/* Override muted text color in dark mode */
+.dark-mode .text-muted {
+  color: #ccc !important;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-switch label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 19px;
+  height: 19px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.toggle-switch input:checked + label {
+  background: var(--primary);
+}
+
+.toggle-switch input:checked + label::after {
+  transform: translateX(24px);
+}
+
+/* Footer */
+footer {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Dark mode background */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Header hide/show transition */
+.header-main {
+  transition: top 0.4s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-hidden {
+  top: -100px;
 }
