@@ -25,6 +25,7 @@ body {
   transition: top 0.3s;
 }
 
+
 /* Neumorphic Cards */
 #portfolio .card {
   background: #e0e0e0;
@@ -95,6 +96,17 @@ body {
   border-bottom: none;
 }
 
+.card-img-top {
+  height: 500px;        /* fixed height */
+  width: 100%;         /* full width */
+  object-fit: cover;    /* crop instead of stretch */
+}
+.card {
+  width: 25rem;   /* increase width */
+  min-height: 590px; /* increase height */
+}
+
+
 /* Optional: info box inside modal */
 .modal-info-box {
   background: #f0f0f0;
@@ -128,8 +140,9 @@ body {
 
 /* Toggle Switch */
 .toggle-switch {
-  position: relative;
-  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .toggle-switch input[type="checkbox"] {

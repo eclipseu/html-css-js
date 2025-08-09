@@ -1,6 +1,7 @@
 // Show alert when contact form is submitted
 function submitForm() {
   alert("Thank you for your message!");
+   document.getElementById("contactForm").reset();
   return false; // Prevent actual form submission
 }
 
